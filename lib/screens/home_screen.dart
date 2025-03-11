@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_projects/base/res/media.dart';
 import 'package:flutter_projects/base/res/style/app_styles.dart';
 import 'package:flutter_projects/base/utils/all_json.dart';
+import 'package:flutter_projects/base/utils/app_routes.dart';
 import 'package:flutter_projects/base/widgets/app_double_text.dart';
 import 'package:flutter_projects/base/widgets/ticket_view.dart';
+import 'package:flutter_projects/screens/widget/hotel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,6 +21,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,9 +65,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                const AppDoubleText(
+                AppDoubleText(
                   bigText: 'Upcoming Flights',
                   smallText: 'View all',
+                  func:
+                      () => Navigator.pushNamed(context, AppRoutes.allTickets),
                 ),
                 const SizedBox(height: 20),
                 SingleChildScrollView(
@@ -77,6 +82,19 @@ class HomeScreen extends StatelessWidget {
                               (singleTickt) => TicketView(ticket: singleTickt),
                             )
                             .toList(),
+                  ),
+                ),
+                const SizedBox(height: 40),
+                AppDoubleText(
+                  bigText: 'Hotels',
+                  smallText: 'View all',
+                  func: () {},
+                ),
+                const SizedBox(height: 20),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [const Hotel(), const Hotel(), const Hotel()],
                   ),
                 ),
               ],
