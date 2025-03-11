@@ -6,7 +6,7 @@ import 'package:flutter_projects/base/utils/all_json.dart';
 import 'package:flutter_projects/base/utils/app_routes.dart';
 import 'package:flutter_projects/base/widgets/app_double_text.dart';
 import 'package:flutter_projects/base/widgets/ticket_view.dart';
-import 'package:flutter_projects/screens/widget/hotel.dart';
+import 'package:flutter_projects/screens/home/widget/hotel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -94,7 +94,11 @@ class HomeScreen extends StatelessWidget {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: [const Hotel(), const Hotel(), const Hotel()],
+                    children:
+                        hotelList
+                            .take(2)
+                            .map((singleHotel) => Hotel(hotel: singleHotel))
+                            .toList(),
                   ),
                 ),
               ],
