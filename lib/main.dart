@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/base/bottom_nav_bar.dart';
+import 'package:flutter_projects/base/utils/app_routes.dart';
 import 'package:flutter_projects/screens/all_tickets.dart';
 
 void main() {
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
 
       // theme: ThemeData(),
       routes: {
-        "/": (context) => const BottomNavBar(),
-        "/all_tickets": (context) => const AllTickets(),
+        AppRoutes.homePage: (context) => const BottomNavBar(),
+        AppRoutes.allTickets: (context) => const AllTickets(),
       },
     );
   }
