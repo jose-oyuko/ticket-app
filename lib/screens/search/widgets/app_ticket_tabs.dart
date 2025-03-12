@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_projects/screens/search/widgets/search_text_container.dart';
 
 class AppTicketTabs extends StatelessWidget {
-  const AppTicketTabs({super.key});
+  final String firstTab;
+  final String secondTab;
+  const AppTicketTabs({
+    super.key,
+    required this.firstTab,
+    required this.secondTab,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +19,12 @@ class AppTicketTabs extends StatelessWidget {
       ),
       child: Row(
         children: [
-          SearchTextContainer(text: "Airline Tickets", color: Colors.white),
           SearchTextContainer(
-            text: "Hotel",
-            color: Colors.transparent,
+            text: firstTab,
+            color: Colors.white,
             right: false,
           ),
+          SearchTextContainer(text: secondTab, color: Colors.transparent),
         ],
       ),
     );
