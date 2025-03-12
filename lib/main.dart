@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/base/bottom_nav_bar.dart';
 import 'package:flutter_projects/base/utils/app_routes.dart';
-import 'package:flutter_projects/screens/all_tickets.dart';
+import 'package:flutter_projects/screens/home/all_tickets.dart';
 
 void main() {
   runApp(const MyApp());
